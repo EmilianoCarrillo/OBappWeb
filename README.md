@@ -31,6 +31,10 @@ The design used on this pages was taken from an opensource template. I wish I co
 
 #### ----- "MI GRUPO" Tab -----
 On this part of the site, the users may check daily their homework on a todo-list style manner, they can check the boxes and store that information just for the user doing the action. They can upload and download files such as books and homeworks. They can write and read notices from other students in Real-Time.
+```
+I also used an OpenSource tool for the calendar used when ulploading homework.
+```
+
 ![Mobile MiGrupo](https://raw.githubusercontent.com/emiliano-carrillo/OBappWeb/master/GitHub%20Previews/Captura%20de%20pantalla%202016-12-22%20a%20la(s)%2000.13.34.png)
 ![MiGrupo](https://raw.githubusercontent.com/emiliano-carrillo/OBappWeb/master/GitHub%20Previews/Captura%20de%20pantalla%202016-12-22%20a%20la(s)%2000.13.52.png)
 
