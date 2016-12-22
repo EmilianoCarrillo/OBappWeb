@@ -1,37 +1,14 @@
-## Welcome to GitHub Pages
+# OBapp|Web
+**Una herramienta incríble desarrollada para alumnos increíbles.**
+Esta es una página web desarrollada por mi, alumno de la escuela Ricardo Flores Magón Xalapa, Ver. con el motivo de aprender desarrollo de aplicaciones para la web y ayudar a la comunidad estudiantil Oficial B en las tareas del día a día.
 
-You can use the [editor on GitHub](https://github.com/emiliano-carrillo/OBappWeb/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Más acerca de la página 
+- La página fue hecha con HTML, CSS y Javascript enteramente. 
+- Utilicé Firebase como servicio de BD. (ALTAMENTE RECOMENDADO)
+- Utilicé código de otra persona (cuyo nombre quisiera recordar) para la herramienta y diseño del calendario al dar click en "Fecha de entrega" al inresar una tarea.
+- Tardé 3 meses en acabarla.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+[Visita la página: OficialBapp.com](oficialbapp.com)
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/emiliano-carrillo/OBappWeb/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
