@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>OBapp | Web</title>
+	<link rel=stylesheet type="text/css" href="Stylesheets/InicioStyles.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto:300,400,700" rel="stylesheet">
+	<meta name="mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="icon" href="HomeIcons/apple-icon-114x114.png" />
+	<link rel="apple-touch-icon-precomposed" href="Multimedia/HomeIcons/apple-icon-114x114.png" />
+	<link rel=" shortcut icon" href="HomeIcons/apple-icon-114x114.png"/>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+	<link rel="stylesheet" type="text/css" href="Stylesheets/addtohomescreen.css">
+	<script src="Scripts/addtohomescreen.js"></script>
+	<script>addToHomescreen();</script>
+	<meta charset="utf-8">
+	<meta name=description content="Una plataforma diseñada para el bachiller Ricardo Flores Magón (Oficial B) Xalapa, Veracruz, México. Avisos, noticias y herramientas para los alumnos. &copy; 2016 Emiliano Carrillo Moncayo">
+	<meta name=keywords content="Oficial B,Ricardo Flores Magón,Xalapa,Escuela,plataforma,Calificaciónes,Tareas,Avisos,obapp,obappweb,plataforma,oficial b plataforma,Emiliano Carrillo Moncayo,Emiliano Carrillo, oficialbapp, oficial b app">
+	<meta name=author content="Emiliano Carrillo Moncayo">
+	<META NAME="ROBOTS" CONTENT="INDEX, NOFOLLOW">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	<meta name="viewport" content="width=device-width" />
+
+	 <script type="text/javascript">
+        $(function() {
+          $('a').click(function() {
+            document.location = $(this).attr('href');
+            return false;
+          });
+        });
+    </script>
+
+		<script type="text/javascript">
+			$(window).load(function() {
+				$(".loader").fadeOut("slow");
+				var window_height		=  	$(window).height(),
+					window_width		=	$(window).width();
+
+				if( (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) && (window_width<800) ) {
+				 	$('#bgVid').css({
+						'visibility' : 'hidden',
+						'z-index' : '-9'
+					})
+					$("#bgVid").remove();
+				} 
+			})
+
+		</script>
+
+		<script charset="UTF-8" src="//cdn.sendpulse.com/28edd3380a1c17cf65b137fe96516659/js/push/e7b58f1dba076c93556d5d6af1daedf2_0.js" async></script>
+
+</head>
+
+<body>
+
+
+		<div class="loader"></div>
+		<input type="checkbox" id="nav-trigger" class="nav-trigger" onclick="validate()" />
+		<label for="nav-trigger"></label>
+
+	<!--MENU HAMBURGUESA///////////////////////////////////////////////////////////////////////-->
+	<div id="hamburgerMenuContainer">
+		<ul id="hamburgerMenu" class="hamMen">
+		<center>
+			<a href="#wrapper"><img class="hamIcon" src="Multimedia/Logos/OBlogoIcon.png" height="60px" width="98px"></a>								
+			<li><a class="hamItems" href="#wrapper" onclick="closeHam()">INICIO </a></li>
+			<li><a class="hamItems" href="#INICIO" onclick="closeHam()">NOTICIAS & AVISOS </a></li>
+			<li><a class="hamItems premium" href="HTML/MiGrupo.html">MI GRUPO 	</a></li>
+			<!--<li><a class="hamItems premium" href="#AJUSTES">AJUSTES 	</a></li>-->
+			<li><a class="mI hamItems" href="sign-up-login-form/index.html">INICIAR SESIÓN	</a></li>
+			<li><a class="hamItems mC" onclick="CerrarSesion()" href="#">CERRAR SESIÓN</a></li>
+		</center>
+		</ul> 
+
+	</div>
+	<h1 id="Welcome"></h1>
+
+	<div id="wrapper">
+
+		<div id="presentation">
+			 
+			<video class="bgMainVideoContainer" id="bgVid" autoplay loop > 
+				<source src="Multimedia/Backgrounds/BackgroundVideo.mp4">
+			</video>
+			<img class="bgMainVideoContainer"  id="altBgPortrait" src="Multimedia/Backgrounds/altBg3.png">
+			<img class="bgMainVideoContainer"  id="altBgLandscape" src="Multimedia/Backgrounds/altBg1.png">
+
+			<section class="foregroundContainer">
+
+				<!--MENU INICIAL//////////////////////////////////////////////////////////////-->
+				<div id="scrollMe" class="foregroundContainer">
+				<ul class="menu">
+					<li><a class="menuItem" href="#INICIO">NOTICIAS & AVISOS		</a></li>
+					<li><a class="menuItem premium" href="HTML/MiGrupo.html">MI GRUPO </a></li>
+					<!--<li><a class="menuItem premium" href="#AJUSTES">AJUSTES	</a></li>-->
+					<li><a class="menuItem mI" href="sign-up-login-form/index.html">INICIAR SESIÓN</a>
+					</li<li><a class="menuItem mC" onclick="CerrarSesion()" href="#">CERRAR SESIÓN</a></li>
+				</ul>
+
+						<center>
+						<a class="scrollInt" href="#INICIO"><img class="scrollImage" img src="Multimedia/Icons/scroll.png" height="30px" width="30px"></a>
+						</center>
+					</div>
+
+				
+				<section id="foreground">
+					<section id="logoContainer">
+						<a href="?"><img id="logo" src="Multimedia/Logos/OBlogo.png" type="image/png"  width="256px"></a>
+					</section>
+
+					<section id="presentationText">
+						<center><h1 class="siteName">OBapp | Web</h1>
+						<h2 class="description">Una herramienta increíble diseñada para alumnos increíbles.</h2></center> 
+								</section>
+			
+				</section>
+
+			</section>
+
+		</div>
+
+
+
+<div id="INICIO" >
+	
+<div id="htmlNoticias">
+
+
+		<!--MENU RESPONSIVO EN NOTICIAS///////////////////////////////////////////////////////-->
+		<ul class="menu pinMenu">
+			<a href="#wrapper"><img class="menuIcon" src="Multimedia/Logos/OBlogoIcon.png" height="40px" ></a>
+			<li><a class="pinMenuItem menuItem activeMI" href="#INICIO">NOTICIAS & AVISOS </a></li>
+			<li><a class="pinMenuItem menuItem premium" href="HTML/MiGrupo.html">MI GRUPO 	</a></li>
+			<!--<li><a class="pinMenuItem menuItem premium" href="#AJUSTES">AJUSTES  </a></li>-->
+			<li><a class="pinMenuItem menuItem mI mI2 " href="sign-up-login-form/index.html">INICIAR SESIÓN	 </a></li>
+			<li><a class="pinMenuItem menuItem  mC" onclick="CerrarSesion()" href="#">CERRAR SESIÓN</a></li>
+		</ul> 
+
+		<!--AVISOS-->
+		<div id="rightContainer" class="txtContainers">
+		<h1>¡Avisos!</h1>
+
+			<!--<article class="type1">
+				<h2 class="articleTitle">Título type I</h2>
+				<p class="articleContent"></p>
+				<h3 class="articleInfo">Link me to... |Author | Day/Month/Year</h3><hr>
+			</article>
+
+			<article class="type2">
+				<h2 class="articleTitle">Título type II</h2>
+					<div class="articleImageContainer">
+						<center><img class="articleImage" src="../Multimedia/OFICIALB.jpg" height="200px"></center>
+					</div>
+				<p class="articleContent">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<h3 class="articleInfo">Link me to... | Author | Day/Month/Year</h3><hr>
+			</article>-->
+
+			<article class="type1">
+				<h2 class="articleTitle" id="avisosTitulo"></h2>
+				<p class="articleContent" id="avisosContenido"></p>
+				<h3 class="articleInfo" id="avisosInfo"></h3><hr>
+			</article>
+
+
+		</div>
+
+
+
+
+
+
+
+		<!--NOTICIAS-->
+		<div id="leftContainer" class="txtContainers">
+		<h1>&ensp;&ensp;NOTICIAS:</h1>
+
+			<!--<article class="type1">
+				<h2 class="articleTitle">Título type I</h2>
+				<p class="articleContent"></p>
+				<h3 class="articleInfo">Link me to... | Author | Day/Month/Year</h3><hr>
+			</article>
+
+			<article class="type2">
+				<h2 class="articleTitle">Título type II</h2>
+					<div class="articleImageContainer">
+						<center><img class="articleImage" src="../Multimedia/" height="250px"></center>
+					</div>
+				<p class="articleContent"></p>
+				<h3 class="articleInfo">Link me to... | Author | Day/Month/Year</h3><hr>
+			</article>
+
+			<article class="type3">
+				<h2 class="articleTitle">Título type III</h2>
+					<div class="articleImageContainer">
+						<center><img class="articleImage" src="../Multimedia/" height="140px"></center>
+					</div>
+				<p class="articleContent"></p>
+				<h3 class="articleInfo">Link me to... | Author | Day/Month/Year</h3><hr>
+			</article>
+
+			
+			-->
+
+			<article class="type2">
+				<h2 class="articleTitle">¡Bronce para la oficial B en la Olimpiada Nacional de matemáticas!</h2>
+					<div class="articleImageContainer">
+						<center><img class="articleImage" src="Multimedia/NoticiasImgs/f7.jpg" height="250px"></center>
+					</div>
+				<p class="articleContent">Felicitamos a los concursantes que representaron a nuestra escuela, la Oficial B, y a Veracruz en la pasada Olimpiada Nacional de Matemáticas 2016 llevada a cabo en Acapulco. <br>¡Felicidades Juan Ramón Rodríguez Córdova por el bronce!<br>¡Y gran logro de Yeudiel Lara Moreno, alumno de tercer semestre!</p>
+				<h3 class="articleInfo">Oficial B | 14/11/16</h3><hr>
+			</article>
+
+			<article class="type2">
+				<h2 class="articleTitle">Alumnos de segundo semestre entregan mobiliario realizado a partir de neumáticos de desecho al Centro estatal de cancerología "Miguel Dorantes Mesa".</h2>
+					<div class="articleImageContainer">
+						<center><img class="articleImage" src="Multimedia/NoticiasImgs/f6.jpg" height="250px"></center>
+					</div>
+				<p class="articleContent">Alumnos de segundo semestre, encabezados por la Profesora Nayeli Aburto Gonzalez y el Profesor Vicente Font Hernández, ambos docentes de la Asignatura de Química II, acudieron al Centro Estatal de Cancerología "Miguel Dorantes Mesa", para entregar mobiliario realizado a partir de neumáticos de desecho. Fueron recibidos por la Dra. Norma Patricia López Pretelin, Directora de dicho centro.</p>
+				<h3 class="articleInfo"><a class="articleLink" href="http://www.rfmoficialb.edu.mx/llantas2.html" target="_blank">VER MÁS</a> | 21/07/2016</h3><hr>
+			</article>
+
+			<article class="type2">
+				<h2 class="articleTitle">Clausura de cursos de la generación 13-16</h2>
+					<div class="articleImageContainer">
+						<center><img class="articleImage" src="Multimedia/NoticiasImgs/f5.jpg" height="250px"></center>
+					</div>
+				<p class="articleContent">El día 6 de julio del presente año se llevó a cabo la ceremonia de clausura de cursos de la Generación 2013 - 2016. La Arq. Ameyalli González García, Encargada de la Dirección, dirigió un emotivo discurso a los agresados. Asimismo, el alumno José Luis Rangel Gasperín en representación de sus compañeros de generación agradeció a sus Padres, Docentes y Amigos la culminación de una etapa más de su vida.</p>
+				<h3 class="articleInfo"> 07/07/2016</h3><hr>
+			</article>
+
+
+			<article class="type3">
+				<h2 class="articleTitle">Alumnos de segundo semestre realizan mobiliario a partir de neumáticos de desecho.</h2>
+					<div class="articleImageContainer">
+						<center><img class="articleImage" src="Multimedia/NoticiasImgs/f4.jpg" height="140px"></center>
+					</div>
+				<p class="articleContent">En la escuela primaria Aquiles de Córdoba Moran, ubicada en la calle unión, manzana 11, Col. Margarita Moran Veliz, en Xalapa, Ver., alumnos de todos los grupos de segundo semestre entregaron mobiliario hecho a partir de neumáticos de desecho. El Proyecto "Elaboración de Mobiliario a partir de Neumáticos de Desecho" se realiza cada año y es coordinado por los Docentes de la asignatura de Química. El mobiliario entregado consiste en mesas, macetas y asientos de lectura. En el evento estuvieron presentes la directora, maestros y alumnos de la escuela rehabilitada, alumnos de la Oficial B, así como algunos padres de familia y el Club Rotario Millenium, uno de los patrocinadores para el desarrollo del proyecto.</p>
+				<h3 class="articleInfo"><a class="articleLink" href="http://www.rfmoficialb.edu.mx/llantas.html" target="_blank">VER MÁS</a> | 01/07/2016</h3><hr>
+			</article>
+
+			<article class="type2">
+				<h2 class="articleTitle">Las 4 mejores preparatorias públicas para estudiar en Xalapa</h2>
+					<div class="articleImageContainer">
+						<center><img class="articleImage" src="Multimedia/NoticiasImgs/f3.jpg" height="250px"></center>
+					</div>
+				<p class="articleContent">🤓 😎</p>
+				<h3 class="articleInfo"><a class="articleLink" href="http://www.politicaaldia.com/resumen.php?id=44912" target="_blank">LEER ARTÍCULO</a> | Emiliano C. | 13/06/2016</h3><hr>
+			</article>
+
+			<article class="type3">
+				<h2 class="articleTitle">La oficial B recibe reconocimiento del cide</h2>
+				<div class="articleImageContainer">
+						<center><img class="articleImage" src="Multimedia/NoticiasImgs/f2.jpg" height="140px"></center>
+				</div>
+				<p class="articleContent">En reunión de Consejo Técnico, la Oficial B recibe reconocimiento del CIDE. El viernes 13 de mayo del año en curso, nuestra escuela recibió la visita de la Lic. Andrea Fernández de Castro, Directora de la Oficina de Promoción y Admisiones del Centro de Investigación y Docencia Económicas (CIDE), con quien sostuvo una breve reunión el Consejo Técnico de nuestra institución. En dicha reunión la Lic. Fernández de Castro entregó a la Arq. Ameyalli González, Encargada de la Dirección, un reconocimiento a nuestra escuela por la formación de excelencia que reciben nuestros alumnos. Se reafirmó el interés de nuestras instituciones por continuar el vínculo que tenemos desde hace varios años, así como seguir promoviendo que los egresados de la Oficial B continúen sus estudios en esa prestigiosa institución, donde se han destacado. Enhorabuena!.</p>
+				
+				<h3 class="articleInfo"> 13/05/2016</h3><hr>
+			</article>
+
+			<article class="type3">
+				<h2 class="articleTitle">Unam entrevista a jóvenes de nuestra escuela</h2>
+					<div class="articleImageContainer">
+						<center><img class="articleImage" src="Multimedia/NoticiasImgs/f1.jpg" height="61px" width="108"></center>
+					</div>
+				<p class="articleContent">Los alumnos Scarlett Sophie Escudero Osorio y José Luis Rangel Gasperín, de los Grupos Tercero "C" y Quinto "C", respectivamente, fueron entrevistados por profesores del plantel Oriente del Colegio de Ciencias y Humanidades de la Universidad Nacional Autónoma de México.</p>
+				<h3 class="articleInfo"> 29/05/2016</h3><hr>
+			</article>
+		</div>
+	</div>
+
+
+		</div>
+
+		<footer id="footer">
+		
+		<section id="footerLeft" class="footerContent">
+				<img id="meImg" src="Multimedia/FooterIcons/me.png" >
+		</section>
+		<section id="footerRight" class="footerContent">
+			<div id="innerLeft">
+				<div id="myInfo">
+					<h3>– Webmaster –</h3>
+					<h2>Diseñada y Desarrollada por Emiliano Carrillo Moncayo,</h2>
+					<h3>alumno de esta institución.</h3> <hr>
+					<a target="_blank" class="contacto" href="https://twitter.com/EmiCm5"><img class="contact" src="Multimedia/FooterIcons/twitter.png"  height="30px" width="30px"></a>
+					<a target="_blank" class="contacto" href="https://www.instagram.com/emiliano.carrillo/"><img class="contact" src="Multimedia/FooterIcons/instagram.png"  height="30px" width="30px"></a>
+					<a target="_blank" class="contacto" href="mailto:emiliano.carrillo@hotmail.com?subject=Oh glorioso Emi, ayuda."><img class="contact" src="Multimedia/FooterIcons/email.png"  height="30px" width="30px"></a>
+				</div>
+			</div>
+			<div  id="innerRight">
+				<div id="schoolInfo">
+					<center><p><br>- Visita la página oficial -</p>
+						<a class= "obLinkA" href="http://www.rfmoficialb.edu.mx" target="_blank"><p class="obLink" >rfmoficialb.edu.mx</p></a><hr>
+						<p>Psst... Mejor quédate aquí</p>
+						</center>	
+				</div>
+			</div>
+		</section>
+
+			<section id="footerBottom" class="footerContent">
+				&copy; 2016, Oficial B. Emiliano Carrillo M.
+			</section
+
+		</footer>	
+
+	</div>
+
+<script src="Scripts/InicioScript.js" ></script>
+</body>
+
+
+
+</html>

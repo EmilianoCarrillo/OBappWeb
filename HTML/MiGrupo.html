@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<title>TABLÓN DE ANUNCIOS</title>
+
+	<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+	<link rel="icon" href="../Multimedia/HomeIcons/apple-icon-114x114.png" />
+	<link rel="apple-touch-icon-precomposed" href="../Multimedia/HomeIcons/apple-icon-114x114.png" />
+	<link rel=" shortcut icon" href="../Multimedia/HomeIcons/apple-icon-114x114.png"/>
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto:300,400,700" rel="stylesheet">
+	<meta name="mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="apple-touch-icon-precomposed" href="../Multimedia/HomeIcons/apple-icon-114x114.png" />
+	<meta name=author content="Emiliano Carrillo Moncayo">
+	<meta name="viewport" content="width=device-width" />
+	<!-- Añadir Font Roboto -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+
+	
+	<!-- Importar hiojas de estilo -->
+	<link rel="stylesheet" type="text/css" href="../Stylesheets/reset.css">
+	<link rel=stylesheet type="text/css" href="../Stylesheets/AnunciosStyles.css">
+	<link rel=stylesheet type="text/css" href="../Stylesheets/TareasStyles.css">
+	<link rel=stylesheet type="text/css" href="../Stylesheets/ArchivosStyles.css">
+	<link rel=stylesheet type="text/css" href="../Stylesheets/MiGrupoStyles.css">
+	<link rel=stylesheet type="text/css" href="../pickadate-master/lib/themes/default.css">
+	<link rel=stylesheet type="text/css" href="../pickadate-master/lib/themes/default.date.css">
+
+	<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+	<script>
+		// Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyBY36MWFRSogdhHtoq0gHry_x783v9kkrU",
+          authDomain: "oficialbapp-web.firebaseapp.com",
+          databaseURL: "https://oficialbapp-web.firebaseio.com",
+          storageBucket: "oficialbapp-web.appspot.com",
+        };
+        firebase.initializeApp(config);
+    </script>
+
+</head>
+
+<body>
+
+<!--MENU RESPONSIVO EN NOTICIAS///////////////////////////////////////////////////////-->
+		<ul class="menu pinMenu">
+			<a href="../index.html"><img class="menuIcon" src="../Multimedia/Logos/OBlogoIcon.png" height="40px" ></a>
+			<li><a class="pinMenuItem menuItem " href="../index.html">NOTICIAS & AVISOS </a></li>
+			<li><a class="pinMenuItem menuItem premium activeMI" href="../HTML/MiGrupo.html">MI GRUPO 	</a></li>
+			<!--<li><a class="pinMenuItem menuItem premium" href="#AJUSTES">AJUSTES  </a></li>-->
+			<li><a class="pinMenuItem menuItem  mC" onclick="CerrarSesion()" href="#">CERRAR SESIÓN</a></li>
+		</ul> 
+
+<a href="../index.html" id="mobileRegresarBtn" style="" ><img src="../Multimedia/Icons/turnBack.png"></a>
+<center><h1 id="nombreGrupo"></h1></center>
+
+<div id="ContenedorDeTodo">
+	<div id="TablonDeAnuncios">
+	<header>
+		<center><h1>TABLÓN DE ANUNCIOS</h1></center>
+		<textarea type="text" placeholder="Anuncia algo importante..." id="itemAnuncios" cols="40" rows="5"></textarea>
+		
+		<button id="addAnuncio">
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve"><g><path class="fill" d="M16,8c0,0.5-0.5,1-1,1H9v6c0,0.5-0.5,1-1,1s-1-0.5-1-1V9H1C0.5,9,0,8.5,0,8s0.5-1,1-1h6V1c0-0.5,0.5-1,1-1s1,0.5,1,1v6h6C15.5,7,16,7.5,16,8z"/></g></svg>
+		</button>
+	</header>
+
+	<div class="AnunciosContainer">
+		<!-- ANUNCIOS -->
+		<ul class="anuncios" id="anuncios"></ul>
+	</div>
+	</div>
+
+	<div id="Tareas">
+		<header>
+			<center><h1>TAREAS</h1></center>
+			<div id="headerTareasIzq">
+			<h2>MATERIA: <input type="text" id="inputTareaMateria"></h2>
+			<h2>FECHA DE ENTREGA: 
+			<input type="text" id="inputTareaFecha" class="datepicker" onclick="CalendarView()">
+			</h2>
+			</div>
+
+			<div id="headerTareasDer">
+			<textarea type="text" placeholder="Descripción" id="itemTareasDescripcion" cols="40" rows="5"></textarea>
+			<button id="addTarea">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve"><g><path class="fill" d="M16,8c0,0.5-0.5,1-1,1H9v6c0,0.5-0.5,1-1,1s-1-0.5-1-1V9H1C0.5,9,0,8.5,0,8s0.5-1,1-1h6V1c0-0.5,0.5-1,1-1s1,0.5,1,1v6h6C15.5,7,16,7.5,16,8z"/></g></svg>
+			</button>
+			</div>
+			<h3 id="Nota"><sup>*</sup>Al <b>eliminar</b> un item de la lista el cambió será grupal.<br>(Las tareas se eliminan automáticamente al siguiente día de la fecha de entrega)</h3>
+		</header>
+
+		<div class="TareasContainer">
+		
+			<!-- TAREAS POR HACER-->
+			<ul class="todo" id="TareasPorHacer"></ul>
+			<!-- TAREAS HECHAS-->
+			<ul class="todo" id="TareasHechas"></ul>
+		</div>
+	</div>
+
+	<div id="Archivos">
+		<header>
+			<center><h1>ARCHIVOS</h1></center>
+				<div id="ContenedorIzquierdo">
+					<h2>NOMBRA TU ARCHIVO: <input type="text" id="inputNombreArchivo"></h2>
+				</div>
+				<div id="ContenedorDerecho">
+					<input type="file" value="upload" id="fileButton">
+				</div>
+				<progress value="0" max="100" id="uploader">0%</progress>
+		</header>
+
+		<div class="ArchivosContainer">
+			<!--LISTA DE ARCHIVOS POR DESCARGAR-->
+			<ul class="archivos" id="archivos"></ul>
+		</div>
+	</div>
+
+	<img  id="Horario" alt="Horario">
+
+	<div id="mobileButtonsContainer">
+		<button id="mobileAnunciosBtn" class="mobileBtns current"><img src="../Multimedia/Icons/Anuncios.png"></button>
+		<button id="mobileTareasBtn" class="mobileBtns" ><img src="../Multimedia/Icons/Tareas.png"></button>
+		<button id="mobileArchivosBtn" class="mobileBtns" ><img src="../Multimedia/Icons/Archivos.png"></button>
+		<button id="mobileHorarioBtn" class="mobileBtns" ><img src="../Multimedia/Icons/Horario.png"></button>
+	</div>
+</div>
+
+
+
+
+
+	<!-- JavaScripts -->
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+	<script src="../Scripts/MiGrupoScript.js" ></script>
+	<script src="../Scripts/Anuncios.js" ></script>
+	<script src="../Scripts/Tareas.js" ></script>
+	<script src="../Scripts/Archivos.js" ></script>
+
+	<script src="../pickadate-master/lib/picker.js" ></script>
+	<script src="../pickadate-master/lib/picker.date.js" ></script>
+
+
+	<!-- Add the language *after* the pickadate script files -->
+	<script src="../pickadate-master/lib/translations/es_ES.js"></script>
+
+	<script type="text/javascript">
+        $(function() {
+          $('a').click(function() {
+            document.location = $(this).attr('href');
+            return false;
+          });
+        });
+    </script>
+
+
+
+</body>
+
+</html>

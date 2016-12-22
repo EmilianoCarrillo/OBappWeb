@@ -1,0 +1,323 @@
+/*/////////////////////////////////////////////////////GENERAL//////////////////////////////////////////////////*/
+/*--------------------------TÍTULO------------------------*/
+	#nombreGrupo {
+		font-size: 50px;
+		background-color: #abcbe8;
+		color: white;
+		padding-top: 0px;
+		position: relative;
+		padding: 0 10px 0 10px;
+		margin:  0 20px 20px 20px;
+	}
+
+@media all and (max-width: 1200px){
+#nombreGrupo {width: 1200px}
+}
+
+/*---------------------------MENÚ-------------------------*/
+	.menu {
+		list-style-type: none;
+   		margin: 0;
+    	padding: 0;
+    	overflow: hidden;
+    	padding-left: 1vw;
+    	padding-top: 3vh;
+		}
+
+	.menu.pinMenu .menuItem{
+		float: left;
+		}
+
+	.menuItem {
+		float: left;
+		display: block;
+    	color: white;
+    	text-align: center;
+    	padding: 14px 16px;
+    	text-decoration: none;
+    	font-family: "Roboto";
+    	padding-left: 2vw;
+    	padding-right: 2vw;
+    	border-top: solid white 1px;
+    	border-bottom: solid white 1px;
+    	width: 30%;
+    	font-size: 15px;
+		}
+
+	.mC{
+		float: right; 
+		margin-right: 2vw;
+		background-color: #FF6A6A;
+	    color: white;
+
+		}
+
+
+	.menuItem:hover{
+	    background-color: #3A8DD6;
+	    color: white;
+	    font-weight: 700;
+	    transition: .5s background-color;
+		}
+	.menuItem:link{
+	    transition: .5s background-color;
+		}
+
+	.mI:hover {
+		border-top: solid 5px white;
+		transition: .5s border-top;
+		}
+	.mI:link{
+		transition: .5s border-top;
+		}
+
+	.pinMenuItem.menuItem.activeMI{
+		background-color: white;
+		color: #3A8DD6;
+		font-weight: 700;
+	}
+	
+	.pinMenu{
+		position: fixed;
+		width: 100%;
+		height: 60px;
+		top: 0;
+		left: 0;
+		z-index: 10;
+		background-color: rgba(55,137,210,.95);
+		padding: 0;
+		visibility: visible;
+		box-shadow: 0px 5px 50px;
+		}
+
+	.pinMenuItem{
+		color: white;
+		float: left;
+		border: none;
+		width: 26%;
+		margin: 0;
+		height: 60px;
+		padding-top:20px;
+		border-right: white solid 1px;
+		}
+	.pinMenuItem:hover{
+	    background-color: white;
+	    color: #3A8DD6;
+	    font-weight: 700;
+		}
+	.menuIcon {
+		opacity: 0.95;
+		margin-left:3%;
+		margin-right: 3%;
+		margin-top: 8px;
+		float: left;
+		}
+
+	.mI2:hover {
+		border-top: solid 5px #FF6A6A;
+		transition: .5s border-top;
+		}
+
+/*----------------------BODY AND STUFF----------------------*/
+	@charset "UTF-8";
+
+	body {
+		background:#ffffff;
+		padding:0px;
+		padding-top: 100px;
+	}
+
+	body, textarea, button {
+		font-family:'Roboto', sans-serif;
+	}
+
+	.noFill {
+		fill:none;
+	}
+
+	h1{
+		color: white;
+		font-family:'Roboto', sans-serif;
+		font-weight:600;
+		padding: 0 0 10px 0;
+		font-size: 20px;
+	}
+
+
+
+
+/*//////////////////////////////////////////////////CONTENEDORES (DIVS)//////////////////////////////////////////*/
+
+#ContenedorDeTodo {
+	width: 1200px;
+	height: 100%;
+	margin:  auto;
+	margin-bottom: 40px;
+}
+
+
+#TablonDeAnuncios {
+	width: 580px;
+	background-color: #fff;
+	border-radius: 10px;
+	float: left;
+	border-radius:5px;
+	box-shadow:0px 10px 10px rgba(44,62,80,0.5);
+}
+
+#Tareas {
+	background-color: #d0d8db;
+	width: 580px;
+	height: 800px;
+	float: left;
+	margin-left: 40px;
+	border-radius:5px;
+
+}
+
+#Archivos{
+	background-color: rgba(240,240,240,.8);
+	width: 100%;
+	height: 600px;
+	float: left;
+	margin-top: 40px;
+}
+
+
+#Horario {
+	width: 100%;
+	padding: 50px;
+}
+
+
+
+
+/*//////////////////////////////////////////////////RESPONSIVE DESIGN//////////////////////////////////////////*/
+
+#mobileRegresarBtn{	display: none;}
+#mobileButtonsContainer{display: none;}
+
+@media all and (max-device-width: 425px), all and (max-width: 425px) {
+	body{
+	padding: 0;
+	}
+	.menu{
+	display: none;
+	}
+	#mobileRegresarBtn {
+	display: block; 
+	float: left;
+	z-index: 10;
+	height: 8vh;
+	width: 20%;
+	background-color: rgb(232,171,203);
+	text-align: center;
+	color: white;
+	font-weight: 600;
+	position: fixed;
+	}
+	#mobileRegresarBtn img {height: 100%;}
+	#nombreGrupo{
+	float: left;
+	width: 80%;
+	margin: 0;
+	height: 8vh;
+	font-size: 7vh;
+	position: fixed;
+	margin-left: 20%;
+	}
+	#ContenedorDeTodo{
+	width: 100%;
+	}
+
+	/*BLOCKS*/
+	#TablonDeAnuncios, #Tareas, #Archivos{
+	position: fixed;
+	width: 100%;
+	margin-top: 8vh;
+	margin-left: 0;
+	}
+	#Horario{
+	position: fixed;
+	margin-top: 8vh;
+	padding: 0;
+	height: 100%;
+	object-fit: contain;
+	}
+	#Tareas, #Horario, #Archivos{display: none; }
+
+	.AnunciosContainer, .TareasContainer, .ArchivosContainer{
+		height: 100px;
+	}
+	#TablonDeAnuncios header, #Tareas header, #Archivos header {
+	border-radius: 0 0 10px 10px;
+	}
+
+
+	ul.anuncios li h2, ul.tareas li h2, ul.archivos li h2 {
+	font-size: 12px;
+	}
+	ul.anuncios li, ul.tareas li h2, ul.archivos li h2{
+	margin:0 0 0px 0;
+	}
+
+	/*Dock*/
+	#mobileButtonsContainer{
+	display: inline-block;
+  	height: 50px;
+  	position: fixed;
+  	left:0;
+  	right: 0;
+  	bottom: 0;
+	}
+	.mobileBtns{
+	width: 25%;
+	float: left;
+	height: 100%;
+	border: none;
+	background-color: #3a8dd6;
+	}
+	.mobileBtns img{
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+	padding: 10px
+	}
+	.current{background-color: #2879c1}
+
+	/*Texto en tareas*/
+	#Tareas h2{
+		font-size: 12px;
+	}
+	#Tareas li {
+		font-size: 12px;
+	}
+	#Nota{font-size: 10px;}
+
+	/*ARCHIVOS*/
+	#Archivos h2{font-size: 12px;}
+	#ContenedorIzquierdo{width: 100%}
+	#ContenedorDerecho{height: auto; margin-top: 5px;width: 100%}
+	#inputNombreArchivo{width: 100%}
+	#Archivos header{height: 135px;}
+	#uploader{width: 60%;}
+	#addArchivo{margin-top: 84px; width: 30%; height: 25px;}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,141 @@
+#uploader {
+	-webkit-appearence: none;
+	appearence: none;
+	width: 50%;
+	height: 10px;
+}
+
+#Archivos header {
+		width:100%;
+		height:110px;
+		position:relative;
+		padding:15px;
+		top:0;
+		left:0;
+		z-index:5;
+		background:#3A8DD6;
+		box-shadow:0px 2px 4px rgba(44,62,80,0.15);
+		border-radius:10px;
+	}
+
+	#Archivos textarea {
+		width:50%;
+		height:80px;
+		float:left;
+		color:#fff;
+		font-size:15px;
+		font-weight:400;
+		padding:10px 60px 10px 10px; 
+		background:rgba(255,255,255,0.2);
+		border-top-left-radius:5px;
+		border-bottom-left-radius:5px;
+		border-top-right-radius:25px;
+		border-bottom-right-radius:25px;
+		border:0px;
+		box-shadow:none;
+		outline:none;
+		resize: none;
+
+		-webkit-appearance:none;
+		-moz-appearance:none;
+		-ms-appearance:none;
+		-o-appearance:none;
+		appearance:none;
+	}
+
+
+
+	#Archivos h2{
+	display: block;
+	color: white;
+	font-weight: 800;
+	font-size: 15px;
+	}
+
+	.ArchivosContainer{
+		height: 480px;
+		width:100%;
+		float:left;
+		padding:15px;
+		overflow-y: scroll;
+		height: 660px;
+	}
+
+	#inputNombreArchivo{
+		width: 400px;
+		border-radius:25px;
+		background:whitesmoke;
+		border:0px;
+		box-shadow:none;
+		outline:none;
+		padding: 0 10px 0 10px;
+		font-family:'Roboto', sans-serif;
+		font-weight:200;
+		font-size: 15px;
+	}
+
+	/*HEADER CONTAINERS*/
+	#ContenedorIzquierdo, #ContenedorDerecho{
+		float: left;
+		width: 50%;
+		height: 30px;
+	}
+
+	#fileButton{color:white; font-weight: 800;}
+
+	#uploader{
+	width: 100%;
+	height: 14px;
+	margin-top: 5px;
+	/* Important Thing */
+	-webkit-appearance: none;
+	border: none;
+	background-color: white;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+	border-radius:25px;
+	}
+	progress::-moz-progress-bar { background: #25b99a;border-radius:25px; }
+	progress::-webkit-progress-bar { background: #fff;border-radius:25px; }
+	progress::-webkit-progress-value { background: #25b99a; border-radius:25px;}
+	progress[value]::-webkit-progress-bar {
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+	}
+
+
+	/*LIST PROGRAMMING*/
+
+	ul.archivos { 
+		width:100%;
+		float:left;
+	}
+
+	ul.archivos li {
+		width:100%;
+		min-height:50px;
+		float:left;
+		font-size:14px;
+		font-weight:500;
+		color:#3A8DD6;
+		line-height:22px;
+		background:none;
+		border-bottom: 2px white solid;
+		position:relative;
+		margin:0 0 10px 0;
+		padding:14px 14px 14px 14px;
+	}
+
+	ul.archivos li h2 {
+		color: black;
+	}
+
+	ul.archivos li:last-of-type {
+		margin:0;
+	}
+
+	ul.archivos a:link {
+		color: #FF6A6A;
+		text-align: right; 
+	}
+	ul.archivos a:hover {
+		color: #ff1e1e;
+	}
