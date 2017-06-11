@@ -1,7 +1,5 @@
 # OBapp|Web
 
-![OBappWeb Logo](http://oficialbapp.com/Multimedia/Logos/OBlogo.png)
-
 > **An incredible tool developed for incredible students.**
 
 It is a website aplication for the students of the school Ricardo Flores Magón (Oficial B) Xalapa, Veracruz, Mexico. 
