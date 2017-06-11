@@ -2,6 +2,8 @@
 
 > **An incredible tool developed for incredible students.**
 
+![MainPhoto](https://github.com/emiliano-carrillo/OBappWeb/blob/master/GitHub%20Previews/mainObapp.jpg?raw=true)
+
 It is a website aplication for the students of the school Ricardo Flores Magón (Oficial B) Xalapa, Veracruz, Mexico. 
 This page was created because of learning purposes and to help my school comunity.
 I first design the concept art and I redisgned (modernized) the school logo, then I made the User Interface. Once I was finished with that I started to add functionality.
