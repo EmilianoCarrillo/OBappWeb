@@ -2,6 +2,8 @@
 
 > **An incredible tool developed for incredible students.**
 
+[WATCH THE PROMOTIONAL VIDEO HERE](https://www.youtube.com/watch?v=UqIjZtuDsbg)
+
 ![MainPhoto](https://github.com/emiliano-carrillo/OBappWeb/blob/master/GitHub%20Previews/mainObapp.jpg?raw=true)
 
 It is a website aplication for the students of the school Ricardo Flores Magón (Oficial B) Xalapa, Veracruz, Mexico. 
